@@ -8,11 +8,17 @@ In particular, we use **pre-treained LLMs** for the following datset splits:
 1. 🔓 [Development](#development-results)
 2. 🔒 [Final](#final-results) [![arXiv](https://img.shields.io/badge/arXiv-2305.17679-b31b1b.svg)]()
 
-The following **reasoning** are used:
+The following **reasoning** we use [[quick-cot]](https://github.com/nicolay-r/quick_cot) to experiment with:
 * Instruction Prompts
-* Chain-of-Thoughts (THoR)
+* Chain-of-Thoughts (THoR): 
 
 ## 🔓 Development Results
+
+| **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
+|------------------------------|----|-----------|---------|-----------|-------|-----------|
+| **GPT-3-0613**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 43.41   | 46.14     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
+| **GPT-3-1106**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 40.85   | 40.04     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
+
 
 
 ## 🔒 Final Results
@@ -20,6 +26,10 @@ The following **reasoning** are used:
 
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
+| **GPT-4-1106-preview**       | 🇺🇸 | CoT THoR  | 50.13   | 55.93     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview-thor-cot.sqlite) |
+| **GPT-3-0613**               | 🇺🇸 | CoT THoR  | 44.50   | 48.17     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
+| **GPT-3-1106**               | 🇺🇸 | CoT THoR  | 42.58   | 42.18     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
+||
 | **GPT-4-1106-preview**       | 🇺🇸 | zero-shot | 54.59   | 64.32     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview.sqlite) |
 | **GPT-3-0613**               | 🇺🇸 | zero-shot | 51.79   | 61.38     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-en-se.sqlite) |
 | **GPT-3-1106**               | 🇺🇸 | zero-shot | 47.04   | 53.19     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106.sqlite) |
