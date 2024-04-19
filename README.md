@@ -60,3 +60,18 @@ We list and separater results for the following models:
 | **GPT-3-1106**               |  🇷🇺  | [zero-shot (short)](data/prompt_v2_short_ru.txt) | 35.07   | 48.53     | 0.0   | [answers](data/answers/final/final_data.csv_gpt-3.5-turbo-1106.sqlite) |
 ||
 | **Mistral-7B-Instruct-v0.2** |  🇷🇺  | [zero-shot](data/prompt_v2_ru.txt) | 42.60   | 48.05     | 0.0   | [answers](data/answers/final/final_data.csv_mistralai_Mistral-7B-Instruct-v0.2.sqlite) |
+
+### References
+
+If you find the results and findings in **Final Results** section valuable 💎, feel free to cite the related work as follows:
+```bibtex
+@misc{rusnachenko2024large,
+      title={Large Language Models in Targeted Sentiment Analysis}, 
+      author={Nicolay Rusnachenko and Anton Golubev and Natalia Loukachevitch},
+      year={2024},
+      eprint={2404.12342},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
