@@ -1,5 +1,4 @@
 # RuSentNE-LLM-Benchmark
-[![arXiv](https://img.shields.io/badge/arXiv-2305.17679-b31b1b.svg)](https://arxiv.org/abs/2305.17679)
 
 This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on [RuSentNE](https://arxiv.org/abs/2305.17679) dataset proposed as a part of the 
 [self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation) with results mentioned in paper:
