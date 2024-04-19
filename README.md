@@ -1,12 +1,14 @@
 # RuSentNE-LLM-Benchmark
-[![arXiv](https://img.shields.io/badge/arXiv-2305.17679-b31b1b.svg)]()
+[![arXiv](https://img.shields.io/badge/arXiv-2305.17679-b31b1b.svg)](https://arxiv.org/abs/2305.17679)
 
+This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on [RuSentNE](https://arxiv.org/abs/2305.17679) dataset proposed as a part of the 
+[self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation) with results mentioned in paper:
+[RuSentNE-2023: Evaluating Entity-Oriented Sentiment Analysis on Russian News Texts](https://arxiv.org/abs/2305.17679)
 
-This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on [RuSentNE](https://arxiv.org/abs/2305.17679) dataset proposed as a part of the [self-titled competitions](https://github.com/dialogue-evaluation/RuSentNE-evaluation). 
 
 In particular, we use **pre-treained LLMs** for the following datset splits:
-1. 🔓 [Development](#development-results)
-2. 🔒 [Final](#final-results) [![arXiv](https://img.shields.io/badge/arXiv-2305.17679-b31b1b.svg)]()
+1. 🔓 **Development**
+2. 🔒 **Final**
 
 The following **reasoning** we use [[quick-cot]](https://github.com/nicolay-r/quick_cot) to experiment with:
 * Instruction Prompts
@@ -14,21 +16,23 @@ The following **reasoning** we use [[quick-cot]](https://github.com/nicolay-r/qu
 
 ## 🔓 Development Results
 
+**Dataset**: [valiation_data_labeled.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/validation_data_labeled.csv)
+
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
 | **GPT-3-0613**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 43.41   | 46.14     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
 | **GPT-3-1106**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 40.85   | 40.04     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
 
-
-
 ## 🔒 Final Results
-[![arXiv](https://img.shields.io/badge/arXiv-2305.17679-b31b1b.svg)]()
+[![arXiv](https://img.shields.io/badge/arXiv-2404.12342-b31b1b.svg)](https://arxiv.org/abs/2404.12342)
+
+**Dataset**: [final_data.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/final_data.csv)
 
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
-| **GPT-4-1106-preview**       | 🇺🇸 | CoT THoR  | 50.13   | 55.93     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview-thor-cot.sqlite) |
-| **GPT-3-0613**               | 🇺🇸 | CoT THoR  | 44.50   | 48.17     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
-| **GPT-3-1106**               | 🇺🇸 | CoT THoR  | 42.58   | 42.18     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
+| **GPT-4-1106-preview**       | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 50.13   | 55.93     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview-thor-cot.sqlite) |
+| **GPT-3-0613**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 44.50   | 48.17     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
+| **GPT-3-1106**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 42.58   | 42.18     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
 ||
 | **GPT-4-1106-preview**       | 🇺🇸 | zero-shot | 54.59   | 64.32     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview.sqlite) |
 | **GPT-3-0613**               | 🇺🇸 | zero-shot | 51.79   | 61.38     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-en-se.sqlite) |
