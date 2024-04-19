@@ -1,0 +1,1 @@
+What is the attitude of the author or another subject in the sentence '{sentence}' to the target '{entity}'? Choose from: positive, negative, neutral.
