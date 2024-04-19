@@ -5,7 +5,6 @@ This repository assess the LLMs reasoning capabilities in Targeted Sentiment Ana
 [self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation) with results mentioned in paper:
 [RuSentNE-2023: Evaluating Entity-Oriented Sentiment Analysis on Russian News Texts](https://arxiv.org/abs/2305.17679)
 
-
 In particular, we use **pre-treained LLMs** for the following datset splits:
 1. 🔓 **Development**
 2. 🔒 **Final**
@@ -33,6 +32,10 @@ This leaderboard and obtained LLM answers is a part of the experiments in paper:
 
 **Dataset**: [final_data.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/final_data.csv)
 
+We list and separater results for the following models:
+1. **Large Scale Proprietary LLMs** (ChatGPT series)
+2. **Accessible LLMs**: `7B-9B` sized models
+
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
 | **GPT-4-1106-preview**       | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 50.13   | 55.93     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview-thor-cot.sqlite) |
@@ -42,6 +45,7 @@ This leaderboard and obtained LLM answers is a part of the experiments in paper:
 | **GPT-4-1106-preview**       | 🇺🇸 | [zero-shot (short)](data/prompt_v2_short_en.txt) | 54.59   | 64.32     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview.sqlite) |
 | **GPT-3-0613**               | 🇺🇸 | [zero-shot (short)](data/prompt_v2_short_en.txt) | 51.79   | 61.38     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-en-se.sqlite) |
 | **GPT-3-1106**               | 🇺🇸 | [zero-shot (short)](data/prompt_v2_short_en.txt) | 47.04   | 53.19     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106.sqlite) |
+||
 | **Mistral-7B-instruct-v0.1** | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) | 49.46   | 58.51     | -     | [answers](data/answers/final/final_data_en.csv_mistralai_Mistral-7B-Instruct-v0.1.sqlite) |
 | **Mistral-7B-instruct-v0.2** | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) | 44.82   | 56.04     | -     | [answers](data/answers/final/final_data_en.csv_mistralai_Mistral-7B-Instruct-v0.2.sqlite) |
 | **DeciLM**                   | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) | 43.85   | 53.65     | 1.44  | [answers](data/answers/final/final_data_en.csv_Deci_DeciLM-7B-instruct.sqlite) |
