@@ -61,6 +61,15 @@ We list and separater results for the following models:
 ||
 | **Mistral-7B-Instruct-v0.2** |  🇷🇺  | [zero-shot](data/prompt_v2_ru.txt) | 42.60   | 48.05     | 0.0   | [answers](data/answers/final/final_data.csv_mistralai_Mistral-7B-Instruct-v0.2.sqlite) |
 
+### Reading the results
+
+All the `sqlite` results are stored in `contents` table.
+
+**Option 1.** You may use [`sqlitebrowser`](https://sqlitebrowser.org/) for accessing the results for exporting into `CSV`.
+
+**Option 2.** Use [`sqlite_2_csv.py`](sqlite2csv.py)
+
+
 ### References
 
 If you find the results and findings in **Final Results** section valuable 💎, feel free to cite the related work as follows:
