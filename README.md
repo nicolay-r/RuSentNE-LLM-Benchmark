@@ -10,8 +10,17 @@ In particular, we use **pre-treained LLMs** for the following datset splits:
 
 The following **reasoning** we use [[quick-cot]](https://github.com/nicolay-r/quick_cot) to experiment with:
 * Instruction Prompts
-* Chain-of-Thoughts (THoR): 
+* Chain-of-Thoughts (THoR)
 
+## 🔍 Accessing the results
+
+All the `sqlite` results are stored in `contents` table.
+
+**Option 1.** You may use [`sqlitebrowser`](https://sqlitebrowser.org/) for accessing the results for exporting into `CSV`.
+![accessability](https://github.com/nicolay-r/RuSentNE-LLM-Benchmark/assets/14871187/aeb063e6-d4d8-43fb-9d26-c22b4ef29d0b)
+
+**Option 2.** Use [`sqlite2csv.py`](sqlite2csv.py) script implemented in this repository.
+ 
 ## 🔓 Development Results
 
 This is an **open-access dataset split** (sentiment labels available) utilized for the development stage and could be used anyone in evaluation checks. 
@@ -60,14 +69,6 @@ We list and separater results for the following models:
 | **GPT-3-1106**               |  🇷🇺  | [zero-shot (short)](data/prompt_v2_short_ru.txt) | 35.07   | 48.53     | 0.0   | [answers](data/answers/final/final_data.csv_gpt-3.5-turbo-1106.sqlite) |
 ||
 | **Mistral-7B-Instruct-v0.2** |  🇷🇺  | [zero-shot](data/prompt_v2_ru.txt) | 42.60   | 48.05     | 0.0   | [answers](data/answers/final/final_data.csv_mistralai_Mistral-7B-Instruct-v0.2.sqlite) |
-
-### Reading the results
-
-All the `sqlite` results are stored in `contents` table.
-
-**Option 1.** You may use [`sqlitebrowser`](https://sqlitebrowser.org/) for accessing the results for exporting into `CSV`.
-
-**Option 2.** Use [`sqlite_2_csv.py`](sqlite2csv.py)
 
 
 ### References
