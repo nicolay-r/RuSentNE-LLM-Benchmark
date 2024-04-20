@@ -16,7 +16,7 @@ The following **reasoning** we use [[quick-cot]](https://github.com/nicolay-r/qu
 
 This is an **open-access dataset split** (sentiment labels available) utilized for the development stage and could be used anyone in evaluation checks. 
 
-**Dataset**: [valiation_data_labeled.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/validation_data_labeled.csv)
+**Dataset**: **[valiation_data_labeled.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/validation_data_labeled.csv)**
 
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
@@ -29,7 +29,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 This leaderboard and obtained LLM answers is a part of the experiments in paper:
 [RuSentNE-2023: Evaluating Entity-Oriented Sentiment Analysis on Russian News Texts](https://arxiv.org/abs/2305.17679). 
 
-**Dataset**: [final_data.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/final_data.csv)
+**Dataset**: **[final_data.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/final_data.csv)**
 
 We list and separater results for the following models:
 1. **Large Scale Proprietary LLMs** (ChatGPT series)
