@@ -29,8 +29,28 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
-| **GPT-3-0613**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 43.41   | 46.14     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
-| **GPT-3-1106**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 40.85   | 40.04     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
+| **GPT-3.5-0613**             | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 43.41   | 46.14     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
+| **GPT-3.5-1106**             | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 40.85   | 40.04     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
+| **mistral-7b**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  |42.74|51.77|0.04|[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_thor.sqlite)       |
+
+| **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
+|------------------------------|----|-----------|---------|-----------|-------|-----------|
+| **GPT-3.5-0613**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |47.39|57.99|0.0 |[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613_prompt.sqlite)  |
+| **GPT-3.5-1106**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.73|52.54|0.0 |[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106_prompt.sqlite)  |
+||
+| **mixtral-8x22b**            | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.94|58.34|0.0 |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x22b_prompt.sqlite)  |
+| **mixtral-8x7b**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |46.31|56.1 |0.07|[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x7b_prompt.sqlite)   |
+| **mistral-7b**               | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.87|53.69|0.11|[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_prompt.sqlite)     |
+
+| **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
+|------------------------------|----|-----------|---------|-----------|-------|-----------|
+| **GPT-3.5-0613**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |44.52|54.67|1.51|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-0613_prompt.sqlite)     |
+| **GPT-3.5-1106**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.46|47.17|0.46|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-1106_prompt.sqlite)     |
+||
+| **mixtral-8x22b**            | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.49|54.55|0.0 |[answers](data/answers/dev/valid_data.csv_open-mixtral-8x22b_prompt.sqlite)     |
+| **mixtral-8x7b**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |39.96|53.56|0.18|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x7b_prompt.sqlite)      |
+| **mistral-7b**               | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.71|47.57|0.18|[answers](data/answers/dev/valid_data.csv_open-mistral-7b_prompt.sqlite)        |
+
 
 ## 🔒 Final Results
 [![arXiv](https://img.shields.io/badge/arXiv-2404.12342-b31b1b.svg)](https://arxiv.org/abs/2404.12342)
@@ -40,19 +60,15 @@ This leaderboard and obtained LLM answers is a part of the experiments in paper:
 
 **Dataset**: **[final_data.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/final_data.csv)**
 
-We list and separater results for the following models:
-1. **Large Scale Proprietary LLMs** (ChatGPT series)
-2. **Accessible LLMs**: `7B-9B` sized models
-
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
 | **GPT-4-1106-preview**       | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 50.13   | 55.93     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview-thor-cot.sqlite) |
-| **GPT-3-0613**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 44.50   | 48.17     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
-| **GPT-3-1106**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 42.58   | 42.18     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
+| **GPT-3.5-0613**             | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 44.50   | 48.17     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
+| **GPT-3.5-1106**             | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 42.58   | 42.18     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
 ||
 | **GPT-4-1106-preview**       | 🇺🇸 | [zero-shot (short)](data/prompt_v2_short_en.txt) | 54.59   | 64.32     | -     | [answers](data/answers/final/final_data_en.csv_gpt-4-1106-preview.sqlite) |
-| **GPT-3-0613**               | 🇺🇸 | [zero-shot (short)](data/prompt_v2_short_en.txt) | 51.79   | 61.38     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-en-se.sqlite) |
-| **GPT-3-1106**               | 🇺🇸 | [zero-shot (short)](data/prompt_v2_short_en.txt) | 47.04   | 53.19     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106.sqlite) |
+| **GPT-3.5-0613**             | 🇺🇸 | [zero-shot (short)](data/prompt_v2_short_en.txt) | 51.79   | 61.38     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-0613-en-se.sqlite) |
+| **GPT-3.5-1106**             | 🇺🇸 | [zero-shot (short)](data/prompt_v2_short_en.txt) | 47.04   | 53.19     | -     | [answers](data/answers/final/final_data_en.csv_gpt-3.5-turbo-1106.sqlite) |
 ||
 | **Mistral-7B-instruct-v0.1** | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) | 49.46   | 58.51     | -     | [answers](data/answers/final/final_data_en.csv_mistralai_Mistral-7B-Instruct-v0.1.sqlite) |
 | **Mistral-7B-instruct-v0.2** | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) | 44.82   | 56.04     | -     | [answers](data/answers/final/final_data_en.csv_mistralai_Mistral-7B-Instruct-v0.2.sqlite) |
@@ -62,13 +78,13 @@ We list and separater results for the following models:
 | **Gemma-2B-IT**              | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) | 31.75   | 45.96     | 2.62  | [answers](data/answers/final/final_data_en.csv_google_gemma-2b-it.sqlite) |
 | **Flan-T5-xxl**              | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) | 36.46   | 42.63     | 1.90  | [answers](data/answers/final/final_data_en.csv_google_flan-t5-xxl.sqlite) |
 
-| **Model**                    | lang | Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers      |
-|------------------------------|------|-----------|---------|-----------|-------|--------------|
-| **GPT-4-1106-preview**       |  🇷🇺  | [zero-shot (short)](data/prompt_v2_short_ru.txt) | 48.04   | 60.55     | 0.0   | [answers](data/answers/final/final_data.csv_gpt-4-1106-preview.sqlite) |
-| **GPT-3-0613**               |  🇷🇺  | [zero-shot (short)](data/prompt_v2_short_ru.txt) | 45.85   | 57.36     | 0.0   | [answers](data/answers/final/final_data.csv_gpt-3.5-turbo-0613.sqlite) |
-| **GPT-3-1106**               |  🇷🇺  | [zero-shot (short)](data/prompt_v2_short_ru.txt) | 35.07   | 48.53     | 0.0   | [answers](data/answers/final/final_data.csv_gpt-3.5-turbo-1106.sqlite) |
+| **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers      |
+|------------------------------|----|-----------|---------|-----------|-------|--------------|
+| **GPT-4-1106-preview**       | 🇷🇺 | [zero-shot (short)](data/prompt_v2_short_ru.txt) | 48.04   | 60.55     | 0.0   | [answers](data/answers/final/final_data.csv_gpt-4-1106-preview.sqlite) |
+| **GPT-3.5-0613**             | 🇷🇺 | [zero-shot (short)](data/prompt_v2_short_ru.txt) | 45.85   | 57.36     | 0.0   | [answers](data/answers/final/final_data.csv_gpt-3.5-turbo-0613.sqlite) |
+| **GPT-3.5-1106**             | 🇷🇺 | [zero-shot (short)](data/prompt_v2_short_ru.txt) | 35.07   | 48.53     | 0.0   | [answers](data/answers/final/final_data.csv_gpt-3.5-turbo-1106.sqlite) |
 ||
-| **Mistral-7B-Instruct-v0.2** |  🇷🇺  | [zero-shot](data/prompt_v2_ru.txt) | 42.60   | 48.05     | 0.0   | [answers](data/answers/final/final_data.csv_mistralai_Mistral-7B-Instruct-v0.2.sqlite) |
+| **Mistral-7B-Instruct-v0.2** | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) | 42.60   | 48.05     | 0.0   | [answers](data/answers/final/final_data.csv_mistralai_Mistral-7B-Instruct-v0.2.sqlite) |
 
 
 ### References
