@@ -1,8 +1,7 @@
 # RuSentNE-LLM-Benchmark
 
-This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on [RuSentNE](https://arxiv.org/abs/2305.17679) dataset proposed as a part of the 
-[self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation) with results mentioned in paper:
-[RuSentNE-2023: Evaluating Entity-Oriented Sentiment Analysis on Russian News Texts](https://arxiv.org/abs/2305.17679)
+This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on **[RuSentNE](https://arxiv.org/abs/2305.17679)** dataset proposed as a part of the 
+[self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation).
 
 In particular, we use **pre-treained LLMs** for the following datset splits:
 1. 🔓 **Development**
