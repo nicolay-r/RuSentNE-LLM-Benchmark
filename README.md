@@ -65,7 +65,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 [![arXiv](https://img.shields.io/badge/arXiv-2404.12342-b31b1b.svg)](https://arxiv.org/abs/2404.12342)
 
 This leaderboard and obtained LLM answers is a part of the experiments in paper:
-[RuSentNE-2023: Evaluating Entity-Oriented Sentiment Analysis on Russian News Texts](https://arxiv.org/abs/2305.17679). 
+[Large Language Models in Targeted Sentiment Analysis in Russian](https://arxiv.org/abs/2404.12342). 
 
 **Dataset**: **[final_data.csv](https://github.com/dialogue-evaluation/RuSentNE-evaluation/blob/main/final_data.csv)**
 
