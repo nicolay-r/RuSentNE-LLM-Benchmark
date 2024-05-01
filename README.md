@@ -1,4 +1,4 @@
-# RuSentNE-LLM-Benchmark
+# RuSentNE-LLM-Benchmark • [![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://twitter.com/nicolayr_/status/1781330684289658933)
 
 This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on **[RuSentNE](https://arxiv.org/abs/2305.17679)** dataset proposed as a part of the 
 [self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation).
@@ -21,6 +21,7 @@ All the `sqlite` results are stored in `contents` table.
 **Option 2.** Use [`sqlite2csv.py`](sqlite2csv.py) script implemented in this repository.
  
 ## 🔓 Development Results
+[![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://twitter.com/nicolayr_/status/1781330684289658933)
 
 This is an **open-access dataset split** (sentiment labels available) utilized for the development stage and could be used anyone in evaluation checks. 
 
