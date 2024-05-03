@@ -39,12 +39,13 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **GPT-3.5-1106**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.73|52.54|0.0 |[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106_prompt.sqlite)  |
 | **mistral-large-latest**     | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.24|58.29|0.0 |[answers](data/answers/dev/valid_data_en.csv_mistral-large-latest_prompt.sqlite)          |
 ||
-| **llama-3-70b-instruct**     | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |48.96|60.71|0.0 |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)|
-| **mixtral-8x22b**            | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.94|58.34|0.0 |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x22b_prompt.sqlite)  |
-| **mixtral-8x7b**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |46.31|56.1 |0.07|[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x7b_prompt.sqlite)   |
-| **llama-3-8b-instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.61|54.88|0.0 |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
-| **mistral-7b**               | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.87|53.69|0.11|[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_prompt.sqlite)     |
-| **llama-2-70b-chat**         | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt)|41.97|53.98|13.44|[answers](data/answers/dev/valid_data_en.csv_meta_llama-2-70b-chat_prompt.sqlite)|
+| **llama-3-70b-instruct**     | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |48.96|60.71|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)|
+| **mixtral-8x22b**            | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.94|58.34|0.0  |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x22b_prompt.sqlite)  |
+| **mixtral-8x7b**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |46.31|56.1 |0.07 |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x7b_prompt.sqlite)   |
+| **llama-3-8b-instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.61|54.88|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
+| **Phi-3-mini-4k-instruct**   | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |44.86|55.52|0.0  |[answers](data/answers/dev/valid_data_en.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite)
+| **mistral-7b**               | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.87|53.69|0.11 |[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_prompt.sqlite)     |
+| **llama-2-70b-chat**         | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |41.97|53.98|13.44|[answers](data/answers/dev/valid_data_en.csv_meta_llama-2-70b-chat_prompt.sqlite)|
 
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
@@ -58,6 +59,8 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **mixtral-8x7b**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |39.96|53.56|0.18|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x7b_prompt.sqlite)      |
 | **mistral-7b**               | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.71|47.57|0.18|[answers](data/answers/dev/valid_data.csv_open-mistral-7b_prompt.sqlite)        |
 | **llama-3-8b-instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.23|48.02|0.35|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
+| **Phi-3-mini-4k-instruct**   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |35.4 |32.7 |0.04|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite) |
+ 
 | **llama-2-70b-chat**         | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt)|16.68|36.77|1.48 |[answers](data/answers/dev/valid_data.csv_meta_llama-2-70b-chat_prompt.sqlite)   |
 
 
