@@ -31,7 +31,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
 | **GPT-3.5-0613**             | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 43.41   | 46.14     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
 | **GPT-3.5-1106**             | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  | 40.85   | 40.04     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
-| **mistral-7b**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  |42.74|51.77|0.04|[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_thor.sqlite)       |
+| **mistral-7b**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  |42.74|51.77|0.04|[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b-thor-cot.sqlite)       |
 
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
