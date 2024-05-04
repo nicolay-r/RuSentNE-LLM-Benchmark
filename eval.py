@@ -36,7 +36,7 @@ def file_to_prompt(source, lang, dir):
 
     for k, filename in m_dict[lang].items():
         if k in source:
-            return k_to_text[k], join(dir, filename)
+            return k_to_text[k], join(dir, filename), k
 
 
 def md_link_value(text, link):
@@ -50,6 +50,12 @@ if __name__ == '__main__':
     parser.add_argument('--sources', dest='sources', nargs="+", default=None)
     parser.add_argument('--csv-sep', dest='csv_sep', type=str, default='\t')
     parser.add_argument('--answer-col', dest='answer_col', type=str, default=None)
+    parser.add_argument('--no-lang', dest="no_lang", action='store_true', default=False)
+    parser.add_argument('--no-prompt-link', dest="no_prompt_link", action='store_true', default=False)
+    parser.add_argument('--no-answer-link', dest="no_answer_link", action='store_true', default=False)
+    parser.add_argument('--metrics', dest="metrics", nargs="+", type=str, default=["f1pn", "f1pn0", "ans_rate"])
+    parser.add_argument('--prompts', dest="prompts", nargs="+", type=str, default=["_prompt", "-thor-cot"])
+    parser.add_argument('--sort-column', dest="sort_column", type=int, default=0)
 
     args = parser.parse_args()
 
@@ -61,6 +67,7 @@ if __name__ == '__main__':
         "sqlite": lambda source: labels_from_sqlite(source, col_labels="label"),
     }
 
+    lines = []
     for s in args.sources:
         assert(isinstance(s, str))
 
@@ -82,12 +89,25 @@ if __name__ == '__main__':
         source_name = basename(s)
         prefix, m_name = source_name.split('.csv_')
         lang = 'en' if 'en' in prefix else "ru"
-        prompt_md_text, prompt_path = file_to_prompt(source=source_name, lang=lang, dir="data")
+        prompt_md_text, prompt_path, prompt_template = file_to_prompt(source=source_name, lang=lang, dir="data")
+
+        if prompt_template not in args.prompts:
+            continue
+
+        # Remove prompt template from name.
+        m_name = m_name.split(prompt_template)[0]
 
         line = [m_name] + \
-               [lang] + \
-               [md_link_value(text=prompt_md_text, link=prompt_path)] + \
-               list(eval_result) + \
-               [md_link_value(text="answers", link=s)]
+               ([lang] if not args.no_lang else []) + \
+               ([md_link_value(text=prompt_md_text, link=prompt_path)] if not args.no_prompt_link else []) + \
+               list([v for k, v in eval_result.items() if k in args.metrics]) + \
+               ([md_link_value(text="answers", link=s)] if not args.no_answer_link else [])
 
+        lines.append(line)
+
+    # Sort the output.
+    sorted(lines, key=lambda item: item[args.sort_column])
+
+    # Output everything.
+    for line in lines:
         print(",".join([str(r) for r in line]))

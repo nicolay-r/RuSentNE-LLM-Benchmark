@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from sklearn.metrics import f1_score
 
 # Not available result constant.
@@ -22,7 +24,11 @@ def calculate_metrics(pred, etalon, do_format_predict_labels=True, do_format_eta
     f1_macro = round(f1_score(etalon, pred, average='macro') * 100, 2)
     f1_posneg_macro = round(f1_score(etalon, pred, average='macro', labels=[1, -1]) * 100, 2)
 
-    return f1_posneg_macro, f1_macro, na_coeff
+    return OrderedDict({
+        "f1pn": f1_posneg_macro,
+        "f1pn0": f1_macro,
+        "no_ans_rate": na_coeff
+    })
 
 
 def parse_model_response_universal(response):
