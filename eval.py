@@ -53,7 +53,7 @@ if __name__ == '__main__':
     parser.add_argument('--no-lang', dest="no_lang", action='store_true', default=False)
     parser.add_argument('--no-prompt-link', dest="no_prompt_link", action='store_true', default=False)
     parser.add_argument('--no-answer-link', dest="no_answer_link", action='store_true', default=False)
-    parser.add_argument('--metrics', dest="metrics", nargs="+", type=str, default=["f1pn", "f1pn0", "ans_rate"])
+    parser.add_argument('--metrics', dest="metrics", nargs="+", type=str, default=["f1pn", "f1pn0", "no_ans_rate"])
     parser.add_argument('--prompts', dest="prompts", nargs="+", type=str, default=["_prompt", "-thor-cot"])
     parser.add_argument('--sort-column', dest="sort_column", type=int, default=0)
 
@@ -110,4 +110,4 @@ if __name__ == '__main__':
 
     # Output everything.
     for line in lines:
-        print(",".join([str(r) for r in line]))
+        print("|".join([str(r) for r in line]))
