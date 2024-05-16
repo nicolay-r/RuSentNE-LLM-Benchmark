@@ -46,13 +46,15 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **llama-3-8b-instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.61|54.88|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
 | **Phi-3-mini-4k-instruct**   | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |44.86|55.52|0.0  |[answers](data/answers/dev/valid_data_en.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite)
 | **mistral-7b**               | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.87|53.69|0.11 |[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_prompt.sqlite)     |
+| **gpt-4o**                   | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.23|55.88|0.0  |[answers](data/answers/dev/valid_data_en.csv_gpt-4o_prompt.sqlite)
 | **llama-2-70b-chat**         | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |41.97|53.98|13.44|[answers](data/answers/dev/valid_data_en.csv_meta_llama-2-70b-chat_prompt.sqlite)|
 
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
 | **GPT-3.5-0613**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |44.52|54.67|1.51|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-0613_prompt.sqlite)     |
+| **gpt-4o**                   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt)|43.93|57.38|0.0|[answers](data/answers/dev/valid_data.csv_gpt-4o_prompt.sqlite)
 | **GPT-3.5-1106**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.46|47.17|0.46|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-1106_prompt.sqlite)     |
-| **GPT-4-turbo-2024-04-09**   | 🇷🇺 |[zero-shot](data/prompt_v2_ru.txt)|41.28|55.7 |0.0|[answers](data/answers/dev/valid_data.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)   |
+| **GPT-4-turbo-2024-04-09**   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.28|55.7 |0.0 |[answers](data/answers/dev/valid_data.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)   |
 | **mistral-large-latest**     | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |<span style="color:red">22.35</span>|43.09|0.04|[answers](data/answers/dev/valid_data.csv_mistral-large-latest_prompt.sqlite)          |
 ||
 | **llama-3-70b-instruct**     | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |45.21|58.32|0.0 |[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)|
