@@ -42,6 +42,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 ||
 | **llama-3-70b-instruct**     | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |48.96|60.71|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)|
 | **mixtral-8x22b**            | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.94|58.34|0.0  |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x22b_prompt.sqlite)  |
+| **Phi-3-small-8k-instruct**  | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |46.87|57.08|0.07|[answers](data/answers/dev/valid_data_en.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
 | **mixtral-8x7b**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |46.31|56.1 |0.07 |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x7b_prompt.sqlite)   |
 | **Mistral-7B-Instruct-v0.3** | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.58|56.08|0.0  |[answers](data/answers/dev/valid_data_en.csv_mistralai_Mistral-7B-Instruct-v0.3_prompt.sqlite)
 | **llama-3-8b-instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.61|54.88|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
@@ -63,6 +64,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **mixtral-8x7b**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |39.96|53.56|0.18|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x7b_prompt.sqlite)      |
 | **mistral-7b**               | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.71|47.57|0.18|[answers](data/answers/dev/valid_data.csv_open-mistral-7b_prompt.sqlite)        |
 | **mistral-7B-Instruct-v0.3** | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.59|44.28|0.18|[answers](data/answers/dev/valid_data.csv_mistralai_Mistral-7B-Instruct-v0.3_prompt.sqlite)
+| **Phi-3-small-8k-instruct**  | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.77|49.78|0.14|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
 | **llama-3-8b-instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.23|48.02|0.35|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
 | **Phi-3-mini-4k-instruct**   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |35.4 |32.7 |0.04|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite) |
 | **llama-2-70b-chat**         | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |16.68|36.77|1.48 |[answers](data/answers/dev/valid_data.csv_meta_llama-2-70b-chat_prompt.sqlite)   |
