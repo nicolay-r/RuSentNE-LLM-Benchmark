@@ -53,6 +53,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **llama-2-70b-chat**         | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |41.97|53.98|13.44|[answers](data/answers/dev/valid_data_en.csv_meta_llama-2-70b-chat_prompt.sqlite)|
 | **Qwen2-1.5B-Instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt)|33.9|48.61|0.0|[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
 |Open & Less 1B|
+| **Flan-T5-large**            | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt)|36.72|24.51|0.0|[answers](data/answers/dev/valid_data_en.csv_google_flan-t5-large_prompt.sqlite)
 | **Qwen2-0.5B-Instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt)|9.52|33.0|0.0|[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
 
 
