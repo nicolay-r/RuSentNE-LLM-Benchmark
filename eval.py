@@ -1,15 +1,19 @@
 import argparse
+from collections import Counter
 from os.path import basename, join
 
 from src.sqlite_provider import SQLiteProvider
 from utils import parse_model_response_universal, calculate_metrics
 
 
-def predict_from_sqlite(sqlite_filepath, table, col_answers):
+def predict_from_sqlite(sqlite_filepath, table, col_answers, do_log=False):
     columns = SQLiteProvider.get_columns(target=sqlite_filepath, table=table)
     col_answers = columns[-1] if col_answers is None else col_answers
     responses = list([r[0] for r in SQLiteProvider.read(target=sqlite_filepath, column_names=[col_answers], table=table)])
-    predictions_str = list(map(lambda r: parse_model_response_universal(response=r), responses))
+    ctr_log = Counter() if do_log else None
+    predictions_str = list(map(lambda r: parse_model_response_universal(response=r, ctr_log=ctr_log), responses))
+    if ctr_log is not None:
+        print(ctr_log)
     return predictions_str
 
 
@@ -60,7 +64,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     predict_source = {
-        "sqlite": lambda source: predict_from_sqlite(source, table="contents", col_answers=args.answer_col),
+        "sqlite": lambda source: predict_from_sqlite(source, table="contents", col_answers=args.answer_col, do_log=True),
     }
 
     label_source = {

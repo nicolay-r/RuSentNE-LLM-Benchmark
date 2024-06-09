@@ -1,4 +1,4 @@
-from collections import OrderedDict
+from collections import OrderedDict, Counter
 
 from sklearn.metrics import f1_score
 
@@ -31,20 +31,41 @@ def calculate_metrics(pred, etalon, do_format_predict_labels=True, do_format_eta
     })
 
 
-def parse_model_response_universal(response):
+def parse_model_response_universal(response, ctr_log=None):
     """universal parser for all models"""
+    assert (isinstance(ctr_log, Counter) or ctr_log is None)
 
-    if 'choose from: positive, negative, neutral.' in response.lower():
-        response = response.lower().split('choose from: positive, negative, neutral.')[1].strip()
-    else:
-        response = response.lower()
+    prefixes = [
+        'choose from: positive, negative, neutral.',
+        "выбери из трех вариантов: позитивная, негативная, нейтральная."
+    ]
+
+    # Lowercase response first.
+    response = response.lower()
+
+    # Seeking for the prompt prefix.
+    p_ind = -1
+    for ind, prefix in enumerate(prefixes):
+        if prefix in response:
+            p_ind = ind
+            break
+
+    if ctr_log is not None:
+        ctr_log["_prompts-removed"] += 1 if p_ind > -1 else 0
+
+    # Removing the presence of the prompt in the generated answer.
+    response = response.split(prefixes[p_ind])[1].strip() if p_ind > -1 else response
 
     if any(e in response for e in ['neutral', 'нейтральн']):
-        return 'neutral'
+        label = 'neutral'
     elif any(e in response for e in ['positiv', 'позитивн']):
-        return 'positive'
+        label = 'positive'
     elif any(e in response for e in ['negativ', 'негатив']):
-        return 'negative'
+        label = 'negative'
     else:
-        return 'neutral (na)'
+        label = 'neutral (na)'
 
+    if ctr_log is not None:
+        ctr_log[f"answer-{label}"] += 1
+
+    return label
