@@ -3,15 +3,15 @@ from collections import Counter
 from os.path import basename, join
 
 from src.sqlite_provider import SQLiteProvider
-from utils import parse_model_response_universal, calculate_metrics
+from utils import parse_model_response_universal_closest, calculate_metrics, parse_model_response_universal_original
 
 
-def predict_from_sqlite(sqlite_filepath, table, col_answers, do_log=False):
+def predict_from_sqlite(sqlite_filepath, table, col_answers, eval_f, do_log=False):
     columns = SQLiteProvider.get_columns(target=sqlite_filepath, table=table)
     col_answers = columns[-1] if col_answers is None else col_answers
     responses = list([r[0] for r in SQLiteProvider.read(target=sqlite_filepath, column_names=[col_answers], table=table)])
     ctr_log = Counter() if do_log else None
-    predictions_str = list(map(lambda r: parse_model_response_universal(response=r, ctr_log=ctr_log), responses))
+    predictions_str = list(map(lambda r: eval_f(response=r, ctr_log=ctr_log), responses))
     if ctr_log is not None:
         print(ctr_log)
     return predictions_str
@@ -54,6 +54,7 @@ if __name__ == '__main__':
     parser.add_argument('--sources', dest='sources', nargs="+", default=None)
     parser.add_argument('--csv-sep', dest='csv_sep', type=str, default='\t')
     parser.add_argument('--answer-col', dest='answer_col', type=str, default=None)
+    parser.add_argument('--eval-mode', dest='eval_mode', type=str, default="default", choices=["default", "closest"])
     parser.add_argument('--no-lang', dest="no_lang", action='store_true', default=False)
     parser.add_argument('--no-prompt-link', dest="no_prompt_link", action='store_true', default=False)
     parser.add_argument('--no-answer-link', dest="no_answer_link", action='store_true', default=False)
@@ -62,9 +63,17 @@ if __name__ == '__main__':
     parser.add_argument('--sort-column', dest="sort_column", type=int, default=0)
 
     args = parser.parse_args()
+    
+    eval_funcs = {
+       "default": parse_model_response_universal_original,
+       "closest": parse_model_response_universal_closest,
+    }
+
+    print("Evaluation mode: {}".format(args.eval_mode))
 
     predict_source = {
-        "sqlite": lambda source: predict_from_sqlite(source, table="contents", col_answers=args.answer_col, do_log=True),
+        "sqlite": lambda source: predict_from_sqlite(source, table="contents", col_answers=args.answer_col, 
+                                                     eval_f=eval_funcs[args.eval_mode], do_log=True),
     }
 
     label_source = {

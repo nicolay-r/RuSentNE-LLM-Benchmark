@@ -1,5 +1,7 @@
 # RuSentNE-LLM-Benchmark • [![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://twitter.com/nicolayr_/status/1781330684289658933)
 
+> **Update 11 June 2024**: Added evaluation mode that counts first label entry. See `eval-mode` parameter key.
+
 This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on **[RuSentNE](https://arxiv.org/abs/2305.17679)** dataset proposed as a part of the 
 [self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation).
 
@@ -51,7 +53,8 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **mistral-7b**               | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.87|53.69|0.11 |[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_prompt.sqlite)     |
 | **gpt-4o**                   | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.23|55.88|0.0  |[answers](data/answers/dev/valid_data_en.csv_gpt-4o_prompt.sqlite)
 | **llama-2-70b-chat**         | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |41.97|53.98|13.44|[answers](data/answers/dev/valid_data_en.csv_meta_llama-2-70b-chat_prompt.sqlite)|
-| **Qwen2-1.5B-Instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt)|33.9|48.61|0.0|[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
+| **Qwen2-1.5B-Instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |33.9 |48.61|0.0  |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite) |
+| **Qwen1.5-1.8B-Chat**        | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt)|33.46|47.17|0.04|[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite) |
 |Open & Less 1B|
 | **Flan-T5-large**            | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt)|36.72|24.51|0.0|[answers](data/answers/dev/valid_data_en.csv_google_flan-t5-large_prompt.sqlite)
 | **Qwen2-0.5B-Instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt)|9.52|33.0|0.0|[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
@@ -60,6 +63,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 
 | **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|-----------|---------|-----------|-------|-----------|
+|Proprietary|
 | **GPT-3.5-0613**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |44.52|54.67|1.51|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-0613_prompt.sqlite)     |
 | **gpt-4o**                   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |43.93|57.38|0.0|[answers](data/answers/dev/valid_data.csv_gpt-4o_prompt.sqlite)
 | **GPT-3.5-1106**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.46|47.17|0.46|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-1106_prompt.sqlite)     |
@@ -74,7 +78,8 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **Phi-3-small-8k-instruct**  | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.77|49.78|0.14|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
 | **llama-3-8b-instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.23|48.02|0.35|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
 | **Phi-3-mini-4k-instruct**   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |35.4 |32.7 |0.04|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite) |
-| **Qwen2-1.5B-Instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt)|20.52|33.59|0.35|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
+| **Qwen2-1.5B-Instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |20.52|33.59|0.35|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
+| **Qwen1.5-1.8B-Chat**        | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt)|11.05|19.29|0.42|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite) |
 | **llama-2-70b-chat**         | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |16.68|36.77|1.48|[answers](data/answers/dev/valid_data.csv_meta_llama-2-70b-chat_prompt.sqlite)   |
 |Open & Less 1B|
 | **Qwen2-0.5B-Instruct**      | 🇷🇺 |[zero-shot](data/prompt_v2_ru.txt)|11.54|18.02|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
