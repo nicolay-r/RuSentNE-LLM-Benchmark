@@ -52,6 +52,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **Mistral-7B-Instruct-v0.3** | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.58|56.08|0.0  |[answers](data/answers/dev/valid_data_en.csv_mistralai_Mistral-7B-Instruct-v0.3_prompt.sqlite)
 | **llama-3-8b-instruct**      | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.61|54.88|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
 | **Phi-3-mini-4k-instruct**   | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |44.86|55.52|0.0  |[answers](data/answers/dev/valid_data_en.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite)
+| **Qwen1.5-7B-Chat**          | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt)|44.39|55.55|0.04|[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen1.5-7B-Chat_prompt.sqlite)
 | **mistral-7b**               | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |42.87|53.69|0.11 |[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_prompt.sqlite)     |
 | **gpt-4o**                   | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |42.23|55.88|0.0  |[answers](data/answers/dev/valid_data_en.csv_gpt-4o_prompt.sqlite)
 | **google_flan-t5-xl**        | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |43.73|53.72|0.0|[answers](data/answers/dev/valid_data_en.csv_google_flan-t5-xl_prompt.sqlite)
@@ -81,11 +82,12 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **Phi-3-small-8k-instruct**  | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |40.77|49.78|0.14|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
 | **llama-3-8b-instruct**      | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |40.23|48.02|0.35|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
 | **Phi-3-mini-4k-instruct**   | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |35.4 |32.7 |0.04|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite) |
-| **Qwen2-1.5B-Instruct**      | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt)|20.5 |33.57|0.35|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
+| **Qwen1.5-7B-Chat**          | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |34.1 |45.05|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-7B-Chat_prompt.sqlite)
+| **Qwen2-1.5B-Instruct**      | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |20.5 |33.57|0.35|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
 | **llama-2-70b-chat**         | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |16.68|36.77|1.48|[answers](data/answers/dev/valid_data.csv_meta_llama-2-70b-chat_prompt.sqlite)   |
-| **Qwen1.5-1.8B-Chat**        | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt)|11.74|8.05 |0.42|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite)
+| **Qwen1.5-1.8B-Chat**        | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |11.74|8.05 |0.42|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite)
 |Open & Less 1B|
-| **Qwen2-0.5B-Instruct**      | 🇷🇺 |* |[zero-shot](data/prompt_v2_ru.txt)|11.76|18.12|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
+| **Qwen2-0.5B-Instruct**      | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt)  |11.76|18.12|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
 
 
 
