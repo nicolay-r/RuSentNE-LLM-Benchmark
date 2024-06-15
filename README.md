@@ -40,7 +40,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **Model**                    |lang|E  | Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
 |------------------------------|----|---|-----------|---------|-----------|-------|-----------|
 |Proprietary|
-| **GPT-4-turbo-2024-04-09**   | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |50.83|61.25|0.0 |[answers](data/answers/dev/valid_data_en.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)|
+| **GPT-4-turbo-2024-04-09**   | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |50.79|61.19|0.0|[answers](data/answers/dev/valid_data_en.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)
 | **GPT-3.5-0613**             | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |47.39|57.99|0.0 |[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613_prompt.sqlite)  |
 | **GPT-3.5-1106**             | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.73|52.54|0.0 |[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106_prompt.sqlite)  |
 | **mistral-large-latest**     | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.24|58.29|0.0 |[answers](data/answers/dev/valid_data_en.csv_mistral-large-latest_prompt.sqlite)          |
@@ -70,8 +70,8 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 |Proprietary|
 | **GPT-3.5-0613**             | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |44.52|54.67|1.51|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-0613_prompt.sqlite)     |
 | **gpt-4o**                   | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |44.15|57.5 |0.0 |[answers](data/answers/dev/valid_data.csv_gpt-4o_prompt.sqlite)
+| **GPT-4-turbo-2024-04-09**   | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |42.21|56.36|0.0 |[answers](data/answers/dev/valid_data.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)
 | **GPT-3.5-1106**             | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |41.46|47.17|0.46|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-1106_prompt.sqlite)     |
-| **GPT-4-turbo-2024-04-09**   | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |41.28|55.7 |0.0 |[answers](data/answers/dev/valid_data.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)   |
 | **mistral-large-latest**     | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |22.35|43.09|0.04|[answers](data/answers/dev/valid_data.csv_mistral-large-latest_prompt.sqlite)          |
 |Open & Less 70B|
 | **llama-3-70b-instruct**     | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |45.21|58.32|0.0 |[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)|
