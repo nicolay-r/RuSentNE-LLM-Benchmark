@@ -57,6 +57,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **gpt-4o**                   | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |42.84|56.19|0.0  |[answers](data/answers/dev/valid_data_en.csv_gpt-4o_prompt.sqlite)
 | **google_flan-t5-xl**        | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |43.73|53.72|0.0  |[answers](data/answers/dev/valid_data_en.csv_google_flan-t5-xl_prompt.sqlite)
 | **llama-2-70b-chat**         | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |41.97|53.98|13.44|[answers](data/answers/dev/valid_data_en.csv_meta_llama-2-70b-chat_prompt.sqlite)|
+| **Qwen2-7B-Instruct**        | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |39.74|48.11|3.87 |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-7B-Instruct_prompt.sqlite)
 | **Qwen2-1.5B-Instruct**      | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |33.88|48.59|0.0  |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
 | **Qwen1.5-1.8B-Chat**        | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |33.65|47.28|0.04 |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite)
 |Open & Less 1B|
@@ -75,6 +76,7 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 | **mistral-large-latest**     | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |22.35|43.09|0.04|[answers](data/answers/dev/valid_data.csv_mistral-large-latest_prompt.sqlite)          |
 |Open & Less 70B|
 | **llama-3-70b-instruct**     | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |45.21|58.32|0.0 |[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)|
+| **Qwen2-7B-Instruct**        | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |42.16|51.13|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-7B-Instruct_prompt.sqlite)
 | **mixtral-8x22b**            | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |41.49|54.55|0.0 |[answers](data/answers/dev/valid_data.csv_open-mixtral-8x22b_prompt.sqlite)     |
 | **mixtral-8x7b**             | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |39.96|53.56|0.18|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x7b_prompt.sqlite)      |
 | **mistral-7b**               | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |41.71|47.57|0.18|[answers](data/answers/dev/valid_data.csv_open-mistral-7b_prompt.sqlite)        |
