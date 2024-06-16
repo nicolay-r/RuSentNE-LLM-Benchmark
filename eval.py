@@ -47,6 +47,14 @@ def md_link_value(text, link):
     return f"[{text}]({link})"
 
 
+eval_funcs = {
+    "default": parse_model_response_universal_original,
+    "closest": parse_model_response_universal_closest,
+    "closest-qwen": lambda **kwargs: parse_model_response_universal_closest(
+        forced_patterns={"without expressing": "neutral"}, **kwargs),
+}
+
+
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
@@ -54,7 +62,7 @@ if __name__ == '__main__':
     parser.add_argument('--sources', dest='sources', nargs="+", default=None)
     parser.add_argument('--csv-sep', dest='csv_sep', type=str, default='\t')
     parser.add_argument('--answer-col', dest='answer_col', type=str, default=None)
-    parser.add_argument('--eval-mode', dest='eval_mode', type=str, default="default", choices=["default", "closest"])
+    parser.add_argument('--eval-mode', dest='eval_mode', type=str, default="closest", choices=list(eval_funcs.keys()))
     parser.add_argument('--no-lang', dest="no_lang", action='store_true', default=False)
     parser.add_argument('--no-prompt-link', dest="no_prompt_link", action='store_true', default=False)
     parser.add_argument('--no-answer-link', dest="no_answer_link", action='store_true', default=False)
@@ -63,11 +71,7 @@ if __name__ == '__main__':
     parser.add_argument('--sort-column', dest="sort_column", type=int, default=0)
 
     args = parser.parse_args()
-    
-    eval_funcs = {
-       "default": parse_model_response_universal_original,
-       "closest": parse_model_response_universal_closest,
-    }
+
 
     print("Evaluation mode: {}".format(args.eval_mode))
 

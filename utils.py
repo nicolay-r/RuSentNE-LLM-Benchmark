@@ -31,11 +31,12 @@ def calculate_metrics(pred, etalon, do_format_predict_labels=True, do_format_eta
     })
 
 
-def parse_model_response_universal_closest(response, ctr_log=None):
+def parse_model_response_universal_closest(response, ctr_log=None, forced_patterns=None):
     """ This is the revised version of assessment.
         That counts the first entry.
     """
     assert (isinstance(ctr_log, Counter) or ctr_log is None)
+    assert (isinstance(forced_patterns, dict) or forced_patterns is None)
 
     prefixes = [
         'choose from: positive, negative, neutral.',
@@ -67,9 +68,14 @@ def parse_model_response_universal_closest(response, ctr_log=None):
 
     # Here we collect all the possible entries.
     labels = []
-    try_reg_label(response, entries=['neutral', 'нейтральн'], to=labels, v="neutral")
-    try_reg_label(response, entries=['positiv', 'позитивн'], to=labels, v='positive')
-    try_reg_label(response, entries=['negativ', 'негатив'], to=labels, v='negative')
+    if forced_patterns is not None:
+        for pattern, label in forced_patterns.items():
+            try_reg_label(response, entries=[pattern], to=labels, v=label)
+
+    if len(labels) == 0:
+        try_reg_label(response, entries=['neutral', 'нейтральн'], to=labels, v="neutral")
+        try_reg_label(response, entries=['positiv', 'позитивн'], to=labels, v='positive')
+        try_reg_label(response, entries=['negativ', 'негатив'], to=labels, v='negative')
 
     if len(labels) == 0:
         labels.append(['neutral (na)', 0])
