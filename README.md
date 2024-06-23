@@ -80,13 +80,13 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 |Open & Less 100B|
 | **llama-3-70b-instruct**     | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |45.89|58.73|0.0|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)
 | **mixtral-8x22b**            | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |42.64|54.91|0.0|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x22b_prompt.sqlite)
-| **mistral-7b**               | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |42.14|47.57|0.18|[answers](data/answers/dev/valid_data.csv_open-mistral-7b_prompt.sqlite)        |
 | **mixtral-8x7b**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.11|53.75|0.18|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x7b_prompt.sqlite)      |
+| **Phi-3-small-8k-instruct**  | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.65|49.64|0.14|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
 | **llama-2-70b-chat**         | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |29.51|27.27|1.65|[answers](data/answers/dev/valid_data.csv_meta_llama-2-70b-chat_prompt.sqlite)   |
 |Open & Less 10B|
 | **Qwen2-7B-Instruct**        | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |42.16|51.13|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-7B-Instruct_prompt.sqlite)
+| **mistral-7b**               | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |42.14|47.57|0.18|[answers](data/answers/dev/valid_data.csv_open-mistral-7b_prompt.sqlite)        |
 | **mistral-7B-Instruct-v0.3** | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.73|44.24|0.18|[answers](data/answers/dev/valid_data.csv_mistralai_Mistral-7B-Instruct-v0.3_prompt.sqlite)
-| **Phi-3-small-8k-instruct**  | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.65|49.64|0.14|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
 | **llama-3-8b-instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.55|47.81|0.35|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
 | **Qwen1.5-7B-Chat**          | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |34.1 |45.05|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-7B-Chat_prompt.sqlite)
 | **Phi-3-mini-4k-instruct**   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |33.79|24.33|0.04|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite) |
