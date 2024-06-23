@@ -1,5 +1,8 @@
 # RuSentNE-LLM-Benchmark • [![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://twitter.com/nicolayr_/status/1781330684289658933)
 
+> **Update 23 June 2024**: All metrics in Development mode has been evaluated under `closest` mode which
+> makes a decision of the result class by relying on the **first entry** of the label.
+ 
 > **Update 11 June 2024**: Added evaluation mode that counts first label entry. See `eval-mode` parameter key.
 
 This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on **[RuSentNE](https://arxiv.org/abs/2305.17679)** dataset proposed as a part of the 
@@ -31,65 +34,66 @@ This is an **open-access dataset split** (sentiment labels available) utilized f
 
 `*` -- denotes evaluation in `first-entry` mode (seeking for the first entry).
 
-| **Model**                    |lang|E  | Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
-|------------------------------|----|---|-------|---------|-----------|-------|-----------|
-| **GPT-3.5-0613**             | 🇺🇸 |   | [CoT THoR](data/thor_cot_schema.json)  | 43.41   | 46.14     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite) |
-| **GPT-3.5-1106**             | 🇺🇸 |   | [CoT THoR](data/thor_cot_schema.json)  | 40.85   | 40.04     | -     | [answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite) |
-| **mistral-7b**               | 🇺🇸 |   | [CoT THoR](data/thor_cot_schema.json)  |42.74|51.77|0.04|[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b-thor-cot.sqlite)       |
+| **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
+|------------------------------|----|-----------|---------|-----------|-------|-----------|
+| **GPT-3.5-0613**             | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  |43.46|46.16|0.21|[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613-thor-cot.sqlite)
+| **GPT-3.5-1106**             | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  |40.83|39.91|0.49|[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106-thor-cot.sqlite)
+| **mistral-7b**               | 🇺🇸 | [CoT THoR](data/thor_cot_schema.json)  |42.34|51.43|0.04|[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b-thor-cot.sqlite)
 
-| **Model**                    |lang|E  | Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
-|------------------------------|----|---|-----------|---------|-----------|-------|-----------|
+
+| **Model**                    |lang| Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
+|------------------------------|----|-----------|---------|-----------|-------|-----------|
 |Proprietary|
-| **GPT-4-turbo-2024-04-09**   | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |50.79|61.19|0.0|[answers](data/answers/dev/valid_data_en.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)
-| **GPT-3.5-0613**             | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |47.39|57.99|0.0 |[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613_prompt.sqlite)  |
-| **GPT-3.5-1106**             | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.73|52.54|0.0 |[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106_prompt.sqlite)  |
-| **mistral-large-latest**     | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.24|58.29|0.0 |[answers](data/answers/dev/valid_data_en.csv_mistral-large-latest_prompt.sqlite)          |
+| **GPT-4-turbo-2024-04-09**   | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |50.79|61.19|0.0|[answers](data/answers/dev/valid_data_en.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)
+| **GPT-3.5-0613**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |47.1|57.76|0.0|[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-0613_prompt.sqlite)
+| **GPT-3.5-1106**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.79|52.55|0.0|[answers](data/answers/dev/valid_data_en.csv_gpt-3.5-turbo-1106_prompt.sqlite)
+| **mistral-large-latest**     | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |44.48|57.24|0.0|[answers](data/answers/dev/valid_data_en.csv_mistral-large-latest_prompt.sqlite)
 |Open & Less 70B|
-| **llama-3-70b-instruct**     | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |48.96|60.71|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)|
-| **mixtral-8x22b**            | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.94|58.34|0.0  |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x22b_prompt.sqlite)  |
-| **Phi-3-small-8k-instruct**  | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |46.87|57.08|0.07 |[answers](data/answers/dev/valid_data_en.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
-| **mixtral-8x7b**             | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |46.31|56.1 |0.07 |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x7b_prompt.sqlite)   |
-| **Mistral-7B-Instruct-v0.3** | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.58|56.08|0.0  |[answers](data/answers/dev/valid_data_en.csv_mistralai_Mistral-7B-Instruct-v0.3_prompt.sqlite)
-| **llama-3-8b-instruct**      | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |45.61|54.88|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
-| **Phi-3-mini-4k-instruct**   | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |44.86|55.52|0.0  |[answers](data/answers/dev/valid_data_en.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite)
-| **Qwen1.5-7B-Chat**          | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |44.39|55.55|0.04 |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen1.5-7B-Chat_prompt.sqlite)
-| **mistral-7b**               | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |42.87|53.69|0.11 |[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_prompt.sqlite)     |
-| **gpt-4o**                   | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |42.84|56.19|0.0  |[answers](data/answers/dev/valid_data_en.csv_gpt-4o_prompt.sqlite)
-| **google_flan-t5-xl**        | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |43.73|53.72|0.0  |[answers](data/answers/dev/valid_data_en.csv_google_flan-t5-xl_prompt.sqlite)
-| **llama-2-70b-chat**         | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |41.97|53.98|13.44|[answers](data/answers/dev/valid_data_en.csv_meta_llama-2-70b-chat_prompt.sqlite)|
-| **Qwen2-7B-Instruct**        | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |39.74|48.11|3.87 |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-7B-Instruct_prompt.sqlite)
-| **Qwen2-1.5B-Instruct**      | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |33.88|48.59|0.0  |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
-| **Qwen1.5-1.8B-Chat**        | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |33.65|47.28|0.04 |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite)
+| **llama-3-70b-instruct**     | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |49.79|61.24|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)
+| **mixtral-8x22b**            | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |46.09|58.24|0.0|[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x22b_prompt.sqlite)
+| **Phi-3-small-8k-instruct**  | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |46.87|57.02|0.07 |[answers](data/answers/dev/valid_data_en.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
+| **mixtral-8x7b**             | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |47.33|56.36|0.07 |[answers](data/answers/dev/valid_data_en.csv_open-mixtral-8x7b_prompt.sqlite)   |
+| **Mistral-7B-Instruct-v0.3** | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.23|55.5 |0.0  |[answers](data/answers/dev/valid_data_en.csv_mistralai_Mistral-7B-Instruct-v0.3_prompt.sqlite)
+| **llama-3-8b-instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |45.25|54.43|0.0  |[answers](data/answers/dev/valid_data_en.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
+| **Phi-3-mini-4k-instruct**   | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |44.62|54.71|0.0  |[answers](data/answers/dev/valid_data_en.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite)
+| **Qwen1.5-7B-Chat**          | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |44.39|55.55|0.04 |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen1.5-7B-Chat_prompt.sqlite)
+| **mistral-7b**               | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |43.11|53.64|0.11 |[answers](data/answers/dev/valid_data_en.csv_open-mistral-7b_prompt.sqlite)     |
+| **gpt-4o**                   | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.84|56.19|0.0  |[answers](data/answers/dev/valid_data_en.csv_gpt-4o_prompt.sqlite)
+| **google_flan-t5-xl**        | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |43.73|53.72|0.0  |[answers](data/answers/dev/valid_data_en.csv_google_flan-t5-xl_prompt.sqlite)
+| **llama-2-70b-chat**         | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |42.42|54.25|13.44|[answers](data/answers/dev/valid_data_en.csv_meta_llama-2-70b-chat_prompt.sqlite)|
+| **Qwen2-7B-Instruct**        | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |39.74|48.11|3.87 |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-7B-Instruct_prompt.sqlite)
+| **Qwen2-1.5B-Instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |33.88|48.59|0.0  |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
+| **Qwen1.5-1.8B-Chat**        | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |33.65|47.28|0.04 |[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite)
 |Open & Less 1B|
-| **Flan-T5-large**            | 🇺🇸 |         | [zero-shot](data/prompt_v2_en.txt) |36.72|24.51|0.0|[answers](data/answers/dev/valid_data_en.csv_google_flan-t5-large_prompt.sqlite)
-| **Qwen2-0.5B-Instruct**      | 🇺🇸 |*        | [zero-shot](data/prompt_v2_en.txt) |9.52 |33.0 |0.0|[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
+| **Flan-T5-large**            | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |36.72|24.51|0.0|[answers](data/answers/dev/valid_data_en.csv_google_flan-t5-large_prompt.sqlite)
+| **Qwen2-0.5B-Instruct**      | 🇺🇸 | [zero-shot](data/prompt_v2_en.txt) |9.52 |33.0 |0.0|[answers](data/answers/dev/valid_data_en.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
 
 
 
-| **Model**                    |lang| E |  Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
-|------------------------------|----|---|------------|---------|-----------|-------|-----------|
+| **Model**                    |lang|  Mode      | F1(P,N) | F1(P,N,0) | N/A % | Answers   |
+|------------------------------|----|------------|---------|-----------|-------|-----------|
 |Proprietary|
-| **GPT-3.5-0613**             | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |44.52|54.67|1.51|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-0613_prompt.sqlite)     |
-| **gpt-4o**                   | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |44.15|57.5 |0.0 |[answers](data/answers/dev/valid_data.csv_gpt-4o_prompt.sqlite)
-| **GPT-4-turbo-2024-04-09**   | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |42.21|56.36|0.0 |[answers](data/answers/dev/valid_data.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)
-| **GPT-3.5-1106**             | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |41.46|47.17|0.46|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-1106_prompt.sqlite)     |
-| **mistral-large-latest**     | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |22.35|43.09|0.04|[answers](data/answers/dev/valid_data.csv_mistral-large-latest_prompt.sqlite)          |
+| **GPT-3.5-0613**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |44.15|53.63|1.51|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-0613_prompt.sqlite)     |
+| **gpt-4o**                   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |44.15|57.5 |0.0 |[answers](data/answers/dev/valid_data.csv_gpt-4o_prompt.sqlite)
+| **GPT-4-turbo-2024-04-09**   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |42.21|56.36|0.0 |[answers](data/answers/dev/valid_data.csv_gpt-4-turbo-2024-04-09_prompt.sqlite)
+| **GPT-3.5-1106**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.34|46.83|0.46|[answers](data/answers/dev/valid_data.csv_gpt-3.5-turbo-1106_prompt.sqlite)     |
+| **mistral-large-latest**     | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |22.33|43.07|0.04|[answers](data/answers/dev/valid_data.csv_mistral-large-latest_prompt.sqlite)          |
 |Open & Less 70B|
-| **llama-3-70b-instruct**     | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |45.21|58.32|0.0 |[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)|
-| **Qwen2-7B-Instruct**        | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |42.16|51.13|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-7B-Instruct_prompt.sqlite)
-| **mixtral-8x22b**            | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |41.49|54.55|0.0 |[answers](data/answers/dev/valid_data.csv_open-mixtral-8x22b_prompt.sqlite)     |
-| **mixtral-8x7b**             | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |39.96|53.56|0.18|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x7b_prompt.sqlite)      |
-| **mistral-7b**               | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |41.71|47.57|0.18|[answers](data/answers/dev/valid_data.csv_open-mistral-7b_prompt.sqlite)        |
-| **mistral-7B-Instruct-v0.3** | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |41.59|44.28|0.18|[answers](data/answers/dev/valid_data.csv_mistralai_Mistral-7B-Instruct-v0.3_prompt.sqlite)
-| **Phi-3-small-8k-instruct**  | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |40.77|49.78|0.14|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
-| **llama-3-8b-instruct**      | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |40.23|48.02|0.35|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
-| **Phi-3-mini-4k-instruct**   | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |35.4 |32.7 |0.04|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite) |
-| **Qwen1.5-7B-Chat**          | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |34.1 |45.05|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-7B-Chat_prompt.sqlite)
-| **Qwen2-1.5B-Instruct**      | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |20.5 |33.57|0.35|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
-| **llama-2-70b-chat**         | 🇷🇺 | |  [zero-shot](data/prompt_v2_ru.txt) |16.68|36.77|1.48|[answers](data/answers/dev/valid_data.csv_meta_llama-2-70b-chat_prompt.sqlite)   |
-| **Qwen1.5-1.8B-Chat**        | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt) |11.74|8.05 |0.42|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite)
+| **llama-3-70b-instruct**     | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |45.89|58.73|0.0|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-70b-instruct_prompt.sqlite)
+| **Qwen2-7B-Instruct**        | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |42.16|51.13|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-7B-Instruct_prompt.sqlite)
+| **mixtral-8x22b**            | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |42.64|54.91|0.0|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x22b_prompt.sqlite)
+| **mistral-7b**               | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |42.14|47.57|0.18|[answers](data/answers/dev/valid_data.csv_open-mistral-7b_prompt.sqlite)        |
+| **mixtral-8x7b**             | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.11|53.75|0.18|[answers](data/answers/dev/valid_data.csv_open-mixtral-8x7b_prompt.sqlite)      |
+| **mistral-7B-Instruct-v0.3** | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |41.73|44.24|0.18|[answers](data/answers/dev/valid_data.csv_mistralai_Mistral-7B-Instruct-v0.3_prompt.sqlite)
+| **Phi-3-small-8k-instruct**  | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.65|49.64|0.14|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-small-8k-instruct_prompt.sqlite)
+| **llama-3-8b-instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |40.55|47.81|0.35|[answers](data/answers/dev/valid_data.csv_meta_meta-llama-3-8b-instruct_prompt.sqlite) |
+| **Phi-3-mini-4k-instruct**   | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |33.79|24.33|0.04|[answers](data/answers/dev/valid_data.csv_microsoft_Phi-3-mini-4k-instruct_prompt.sqlite) |
+| **Qwen1.5-7B-Chat**          | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |34.1 |45.05|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-7B-Chat_prompt.sqlite)
+| **llama-2-70b-chat**         | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |29.51|27.27|1.65|[answers](data/answers/dev/valid_data.csv_meta_llama-2-70b-chat_prompt.sqlite)   |
+| **Qwen2-1.5B-Instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |20.5 |33.57|0.35|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-1.5B-Instruct_prompt.sqlite)
+| **Qwen1.5-1.8B-Chat**        | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt) |11.74|8.05 |0.42|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen1.5-1.8B-Chat_prompt.sqlite)
 |Open & Less 1B|
-| **Qwen2-0.5B-Instruct**      | 🇷🇺 |*|  [zero-shot](data/prompt_v2_ru.txt)  |11.76|18.12|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
+| **Qwen2-0.5B-Instruct**      | 🇷🇺 | [zero-shot](data/prompt_v2_ru.txt)  |11.76|18.12|0.25|[answers](data/answers/dev/valid_data.csv_Qwen_Qwen2-0.5B-Instruct_prompt.sqlite)
 
 
 
