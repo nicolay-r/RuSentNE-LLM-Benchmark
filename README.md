@@ -9,7 +9,7 @@ This repository assess the LLMs reasoning capabilities in Targeted Sentiment Ana
 [self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation).
 
 In particular, we use **pre-treained LLMs** for the following datset splits:
-1. 🔓 **Development*~~~~*
+1. 🔓 **Development**
 2. 🔒 **Final**
 
 The following **reasoning** we use [[quick-cot]](https://github.com/nicolay-r/quick_cot) to experiment with:
