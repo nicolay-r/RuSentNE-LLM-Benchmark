@@ -1,5 +1,8 @@
 # RuSentNE-LLM-Benchmark • [![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://twitter.com/nicolayr_/status/1781330684289658933)
 
+> **Update 11 August 2024:** 🎤 Announcing the talk on this framework @ [NLPSummit 2024](https://www.nlpsummit.org/nlp-summit-2024/) with the preliminary ad and details in [X/Twitter post](https://x.com/nicolayr_/status/1822587387312021663) 🐦.
+[![twitter](https://img.shields.io/twitter/url/https/shields.io.svg)](https://x.com/nicolayr_/status/1822587387312021663)
+
 > **Update 23 June 2024**: All metrics in Development mode has been evaluated under `closest` mode which
 > makes a decision of the result class by relying on the **first entry** of the label.
  
