@@ -11,6 +11,8 @@
  
 > **Update 11 June 2024**: Added evaluation mode that counts first label entry. See `eval-mode` parameter key.
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/qawLJsRHzB4)](https://youtu.be/qawLJsRHzB4)
+
 This repository assess the LLMs reasoning capabilities in Targeted Sentiment Analysis on **[RuSentNE](https://arxiv.org/abs/2305.17679)** dataset proposed as a part of the 
 [self-titled competition](https://github.com/dialogue-evaluation/RuSentNE-evaluation).
 
